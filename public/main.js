@@ -1,13 +1,3 @@
-// const strictEquals = (valueA, valueB) => {
-//   const areTheSame = Object.is(valueA, valueB);
-
-//   if (Object.is(valueA, valueB)) {
-//   }
-//   return areTheSame;
-// };
-
-// console.log(strictEquals(NaN, NaN));
-
 const strictEquals = (valueA, valueB) => {
   const stringValueA = valueA.toString();
   const stringValueB = valueB.toString();
@@ -18,12 +8,10 @@ const strictEquals = (valueA, valueB) => {
   if (Object.is(valueA, -0) && Object.is(0, valueB)) {
     return true;
   }
-  // const areTheSame = Object.is(valueA, valueB);
-  // return areTheSame;
+  if (Object.is(valueA, 0) && Object.is(-0, valueB)) {
+    return true;
+  }
 
-  // if (Object.is(valueA, valueB)) {
-  //   return;
-  // }
   return Object.is(valueA, valueB);
 };
 
